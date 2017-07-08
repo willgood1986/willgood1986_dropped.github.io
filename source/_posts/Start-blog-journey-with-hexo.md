@@ -45,7 +45,7 @@ categories: Hexo
 ```
 
 ### Deploy blog on github pages
-1. **Create a repository with the format 'username.githu.io'**
+1. **Create a repository with the format 'username.github.io'**
 
 2. **Generate SSH keys with default settings and add them on github**
 ```bash
@@ -142,6 +142,36 @@ As hexo can regenerate blog content with source codes at any time.
    $ git add .
    $ git commit -m "your comment ..."
 ```
+
+### Custom Theme
+>By default, the theme is Landscape. It is rather tough. We can use the following steps to custom theme settting. We can take the 
+popular theme Next for example.
+
+1. Drop themes folder
+```bash
+   rm -r themes
+```
+2. Fork the hexo-theme-next on github
+
+3. Add submodule
+```bash
+   git summodule add https://github.com/yourname/hexo-theme-next themes/next
+```
+4. Sync with source
+```bash
+   git remote add upstream https://github.com/iissnan/hexo-theme-next.git 
+```
+5. Mergee
+```
+  cd themes/next
+  git fetch upstream
+  git merge upstream/master
+
+6. Update site configuration file
+
+Edit ./_config.yml, replace Landscape with Next for the threshold theme
+
+
 
 [My Github](https://github.com/willgood1986/willgood1986.github.io)
 [Send Email](mailto:willgood1986@outlook.com)

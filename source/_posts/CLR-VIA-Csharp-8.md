@@ -49,3 +49,82 @@ internal struct Triangle
        LengthOfB = 4d;
    }
 }
+
+15. By default, types don't have type constructor. And there is only one type constructor. Type constructor is executed at the first time when the type is accessed. C# doesn't allow defining a parameterless instance constructor for value type, allow defining a parameterless type constructor. Type constructor would always be private. And this is guaranteed by the C#, user should just keep it.
+16. Value type doesn't allow inline fields, but allow static fields.
+```bash
+struct SomeValueType
+{
+    # This is not allowed. Code will not be inlined
+    private Int32 m_internalCount = 3;
+
+   # This is permitted
+   private static Int32 m_number = 10
+}
+
+```
+17. Methods of operator overload must be marked **Static** and **public** . In addition, one of the parameter type must be the same as the type that the operater overload method is defined within.
+```bash
+class SomeType
+{
+   public static SomeType operator+(SomeType i_op1, SomeType i_op2)
+}
+```
+18.Convention methods must be marked static and pulic. And either the input parameter type or the return type must be same as the type that convention type is defined within. From other type to this type, use the key word implicit; otherwise use explicit key word
+```bash
+class sealed SomeType
+{
+
+   public SomeType(Int32 i_num) {...}
+   public static Int32 ToInt32(SomeType i_someType) {...}
+   
+   public static implicit operator SomeType(Int32 i_num)
+   {
+     return new SomeType(i_num);
+   }
+
+   public static explicit operator Int32(SomeType i_someType)
+   {
+      return i_someType.ToInt32();
+   } 
+}
+```
+19. Convention methods are not invoked when use **as** or **is** operand.
+20. Extension method
+```bash
+public static class SomeTypeExtension
+{
+  public static DoSomething(this SomeType i_someType, ...)
+  {
+  }
+}
+```
+21. We also can define extension methods for interface types as following
+```bash
+public static ShowItems<T>(this IEnumerable<T> items)
+{ 
+   foreach (var item in items)
+   {
+       Console.Write(item)
+   }
+}
+```
+22. Extension methods are corestone of Microsofts langueage integrated query. 
+23. Define extension methods for Delegate methods
+```bash
+public static InvokeAndCatch<TException>(this Action<Object> func, Object i_object) where TException : Exception
+{
+   try
+   {
+      func(i_object)
+   }
+   catch (TException)
+  {
+}
+}
+```
+```bash
+  Action<Object> action = obj => Console.Write(obj.GetType())
+  action.InvokeAndCatch<NullReferenceException>(null)
+```
+
