@@ -1,5 +1,5 @@
 ---
-title: CLR-VIA-Csharp-14
+title: CLR-VIA-Csharp-14 String
 date: 2017-07-11 05:39:21
 tags: CLR
 categories: C#
