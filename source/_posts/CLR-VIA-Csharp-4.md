@@ -1,5 +1,5 @@
 ---
-title: CLR-VIA-Csharp-4
+title: CLR-VIA-Csharp-4 Types
 date: 2017-06-12 06:38:20
 tags: CLR
 categories: C#

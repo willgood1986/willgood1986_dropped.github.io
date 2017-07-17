@@ -1,9 +1,9 @@
 ---
-title: CLR-VIA-Csharp-2
+title: CLR-VIA-Csharp-2 Assembly
 date: 2017-06-02 18:39:39
 tags:
   - CLR
-Categories:
+categories:
   - C#
     
 ---

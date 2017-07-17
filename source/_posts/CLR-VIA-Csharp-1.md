@@ -1,8 +1,8 @@
-title: CLR VIA Csharp 1
+title: CLR VIA Csharp 1 Glance at CLR
 date: 2017-04-26 06:48:38
 tags:
    - CLR
-Categories:
+categories:
    - C#
 ---
 > Basic knowledge about C#

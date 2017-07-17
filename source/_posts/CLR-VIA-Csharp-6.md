@@ -1,5 +1,5 @@
 ---
-title: CLR-VIA-Csharp-6
+title: CLR-VIA-Csharp-6 Members of Type
 date: 2017-06-13 08:29:48
 tags: CLR
 categories: C#

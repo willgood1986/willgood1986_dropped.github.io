@@ -1,5 +1,5 @@
 ---
-title: CLR-VIA-Csharp-3
+title: CLR-VIA-Csharp-3 Strong Name Assembly
 date: 2017-06-02 19:06:03
 tags:
   - CLR

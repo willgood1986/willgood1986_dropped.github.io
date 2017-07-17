@@ -2,7 +2,7 @@
 title: CLR-VIA-Csharp-7 Constants and Fields
 date: 2017-06-15 06:49:13
 tags: CLR
-Categories: C#
+categories: C#
 ---
 > Data members - Constants and Fields
 <!--more-->

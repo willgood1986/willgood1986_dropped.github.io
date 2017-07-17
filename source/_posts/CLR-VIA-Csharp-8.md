@@ -2,7 +2,7 @@
 title: CLR-VIA-Csharp-8 Methods
 date: 2017-06-16 21:05:50
 tags: CLR
-Categories: C#
+categories: C#
 ---
 > Methods are to change state of the object.They may be inform of constructor(instance/type), operator overload, type conversion, extension methods, and partial methods.
 <!--more-->
