@@ -32,4 +32,52 @@ categories: Python
 ```
 > sudo apt-get install mysql-server libmysqlclient-dev -yq
 > sudo /etc/init.d/mysql start
+```  
+6. Intall MySQLdb which is an interface to Python using following command
+```
+> sudo pip install mysql-python
+```
+7. Create a user for a specific database
+```
+> sudo mysql -u root -p
+> Enter Password: 
+mysql>create database r;
+mysql>create user 'web'@'localhost' identified by 'web'
+mysql>use r;
+Database Changed
+mysql>grant all on r.* TO 'web'@'localhost'
+mysql>quit;
+Bye
+```
+8. A common operation on MYSQL:
+```
+HOSTNAME='localhost'
+DATABASE='r'
+USERNAME='web'
+PASSWORD='web'
+DB_URI='mysql://{}:{}@{}/{}'.format(USERNAME, PASSWORD, HOSTNAME, DATABASE)
+
+def Test():
+    import MySQLdb
+
+    try:
+        con = MySQLdb.connect(HOSTNAME,USERNAME,PASSWORD,DATABASE)
+        cur = con.cursor()
+        cur.execute("SELECT VERSION()")
+        ver = cur.fetchone()
+        print("Database version: %s" %ver)
+    except MySQLdb.Error as e:
+        print("Error %d: %s" %(e.args[0], e.args[1]))
+        exit(1)
+    finally:
+        if con:
+            con.close()
+
+
+if __name__ == "__main__":
+    Test()
+
+Output like:
+Database version: 5.7.19-0ubuntu0.16.04.1
+
 ```
