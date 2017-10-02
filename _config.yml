@@ -73,4 +73,4 @@ deploy:
   branch: master
 
 # Avatar
-avatar: /upload/avatar.jpeg
+avatar: /images/avatar.jpeg
